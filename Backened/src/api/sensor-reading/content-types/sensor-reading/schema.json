@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sensor_readings",
+  "info": {
+    "singularName": "sensor-reading",
+    "pluralName": "sensor-readings",
+    "displayName": "Sensor Reading",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sensor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sensor.sensor"
+    },
+    "reading": {
+      "type": "float"
+    }
+  }
+}

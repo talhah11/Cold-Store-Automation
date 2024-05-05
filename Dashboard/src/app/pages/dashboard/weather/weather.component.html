@@ -1,0 +1,55 @@
+<ng-container *ngIf="weeklyData[4] && currentTemp">
+  <nb-card size="medium">
+    <nb-card-body>
+      <span class="h3 location">Pakpattan</span>
+      <span class="date">{{ currentDate | date : "EEE d MMM" }}</span>
+
+      <div class="today">
+        <span class="today-temperature h1">{{currentTemp.main.temp.toFixed(1)}}&deg;F</span>
+        <nb-icon icon="sun-outline" pack="eva" class="today-icon"></nb-icon>
+      </div>
+
+      <div class="today-details">
+        <div class="parameter">
+          <span class="caption parameter-name">max</span>
+          <span class="parameter-value">{{weeklyData[0].maxTemp.toFixed(1)}}&deg;F</span>
+        </div>
+        <div class="parameter">
+          <span class="caption parameter-name">min</span>
+          <span class="parameter-value">{{weeklyData[0].minTemp.toFixed(1)}}&deg;F</span>
+        </div>
+        <div class="parameter">
+          <span class="caption parameter-name">wind</span>
+          <span class="parameter-value">{{currentTemp.wind.speed.toFixed(1)}} km/h</span>
+        </div>
+        <div class="parameter">
+          <span class="caption parameter-name">hum</span>
+          <span class="parameter-value">{{currentTemp.main.humidity}} %</span>
+        </div>
+      </div>
+
+      <div class="weekly-forecast">
+        <div class="day">
+          <span class="caption">{{weekDays[(currentDay + 1) % 7]}}</span>
+          <i class="weather-icon ion-ios-cloudy-outline"></i>
+          <span class="temperature">{{weeklyData[1].maxTemp.toFixed(1)}}&deg;F</span>
+        </div>
+        <div class="day">
+          <span class="caption">{{weekDays[(currentDay + 2) % 7]}}</span>
+          <i class="weather-icon ion-ios-sunny-outline"></i>
+          <span class="temperature">{{weeklyData[2].maxTemp.toFixed(1)}}&deg;F</span>
+        </div>
+        <div class="day">
+          <span class="caption">{{weekDays[(currentDay + 3) % 7]}}</span>
+          <i class="weather-icon ion-ios-rainy-outline"></i>
+          <span class="temperature">{{weeklyData[3].maxTemp.toFixed(1)}}&deg;F</span>
+        </div>
+        <div class="day">
+          <span class="caption">{{weekDays[(currentDay + 4) % 7]}}</span>
+          <i class="weather-icon ion-ios-partlysunny-outline"></i>
+          <span class="temperature">{{weeklyData[4].maxTemp.toFixed(1)}}&deg;F</span>
+        </div>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</ng-container>

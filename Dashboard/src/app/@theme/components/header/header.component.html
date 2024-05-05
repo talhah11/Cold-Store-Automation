@@ -1,0 +1,15 @@
+<div class="header-container">
+  <div class="logo-container">
+    <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+      <nb-icon icon="menu-2-outline"></nb-icon>
+    </a>
+    <a class="logo" href="#" (click)="navigateHome()">ColdStore-<span>Dashboard</span></a>
+  </div>
+</div>
+
+<div class="header-container">
+  <nb-actions size="small">
+    <!-- <nb-action class="control-item" icon="bell-outline" outline nbButton [nbContextMenu]="items"></nb-action> -->
+    <nb-action class="control-item" icon="log-out-outline" (click) = logout()></nb-action>
+  </nb-actions>
+</div>

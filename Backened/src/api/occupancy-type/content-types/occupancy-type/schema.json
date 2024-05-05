@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "occupancy_types",
+  "info": {
+    "singularName": "occupancy-type",
+    "pluralName": "occupancy-types",
+    "displayName": "Occupancy Type"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+	"temperature_max": {
+      "type": "float"
+    },
+    "temperature_min": {
+      "type": "float"
+    },
+    "co2_min": {
+      "type": "float"
+    },
+    "co2_max": {
+      "type": "float"
+    },
+    "humidity_min": {
+      "type": "float"
+    },
+    "humidity_max": {
+      "type": "float"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sensor_types",
+  "info": {
+    "singularName": "sensor-type",
+    "pluralName": "sensor-types",
+    "displayName": "Sensor Type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "is_outdoor": {
+      "type": "boolean"
+    }
+  }
+}

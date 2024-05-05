@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "industrial_units",
+  "info": {
+    "singularName": "industrial-unit",
+    "pluralName": "industrial-units",
+    "displayName": "Industrial Unit ",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "rooms": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::room.room",
+      "mappedBy": "industrial_unit"
+    },
+    "cooling_units": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cooling-unit.cooling-unit",
+      "mappedBy": "industrial_unit"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

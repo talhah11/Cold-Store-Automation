@@ -1,0 +1,89 @@
+<div class="form-loader" *ngIf="loading">
+  <div class="spinner-border text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<main *ngIf="!loading">
+  <div class="row">
+    <div class="col-xxxl-3 col-md-6" *ngFor="let statusCard of statusCards">
+      <ngx-status-card [title]="statusCard.title" [type]="statusCard.type">
+        <i [ngClass]="statusCard.iconClass"></i>
+      </ngx-status-card>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xxxl-3 col-md-6">
+      <nb-card (click)="on = on">
+        <div class="icon-container">
+          <div class="icon status-success">
+            <i class="nb-checkmark-circle"></i>
+          </div>
+        </div>
+        <div class="details">
+          <div class="title h5">Model Prediction (Desired Temperature)</div>
+          <div class="h6 pt-2">{{modelPrediction}}&deg;F</div>
+        </div>
+      </nb-card>
+    </div>
+
+    <div class="col-xxxl-3 col-md-6">
+      <nb-card (click)="on = on">
+        <div class="icon-container">
+          <div class="icon status-info">
+            <i class="nb-e-commerce"></i>
+          </div>
+        </div>
+        <div class="details">
+          <div class="title h5">Item Stored</div>
+          <div class="h6 pt-2">{{itemStored}}</div>
+        </div>
+      </nb-card>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-xxxl-4 col-xxl-4 col-lg-4 col-md-4">
+      <ngx-temperature></ngx-temperature>
+    </div>
+
+    <div class="col-xxxl-4 col-xxl-4 col-lg-4 col-md-4">
+      <ngx-co2></ngx-co2>
+    </div>
+
+    <div class="col-xxxl-4 col-xxl-4 col-lg-4 col-md-4">
+      <ngx-humidity></ngx-humidity>
+    </div>
+  </div>
+
+  <div class="row"> 
+    <div class="col-xxxl-6 col-xxl-6 col-lg-6 col-md-6">
+      <ngx-temperature-graph></ngx-temperature-graph>
+    </div>
+    <div class="col-xxxl-6 col-xxl-6 col-lg-6 col-md-6">
+      <ngx-co2-graph></ngx-co2-graph>
+    </div>
+  </div>
+
+  <div class="row"> 
+    <div class="col-xxxl-6 col-xxl-6 col-lg-6 col-md-6">
+      <ngx-humidity-graph></ngx-humidity-graph>
+    </div>
+    <div class="col-xxxl-6 col-xxl-6 col-lg-6 col-md-6">
+      <ngx-electricity></ngx-electricity>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xxxl-9 col-xl-12">
+      <ngx-rooms></ngx-rooms>
+    </div>
+
+    <div class="col-xxxl-3 col-xxl-4 col-md-5">
+      <ngx-weather></ngx-weather>
+    </div>
+
+    <div class="col-xxxl-6 col-xxl-12 col-md-7">
+      <ngx-security-cameras></ngx-security-cameras>
+    </div>
+  </div>
+</main>

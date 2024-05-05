@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cooling_units",
+  "info": {
+    "singularName": "cooling-unit",
+    "pluralName": "cooling-units",
+    "displayName": "Cooling Unit",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "rooms": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::room.room",
+      "mappedBy": "cooling_unit"
+    },
+    "industrial_unit": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::industrial-unit.industrial-unit",
+      "inversedBy": "cooling_units"
+    },
+    "power_sensor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sensor.sensor"
+    }
+  }
+}

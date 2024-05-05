@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "predicted_readings",
+  "info": {
+    "singularName": "predicted-reading",
+    "pluralName": "predicted-readings",
+    "displayName": "Predicted Reading"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sensor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sensor.sensor"
+    }
+  }
+}

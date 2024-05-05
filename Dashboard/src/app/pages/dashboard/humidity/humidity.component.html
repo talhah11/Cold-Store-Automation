@@ -1,0 +1,29 @@
+<ng-container *ngIf="humidity">
+  <nb-card size="medium">
+    <nb-tabset fullWidth>
+      <nb-tab tabTitle="Humidity">
+        <div class="slider-container">
+          <ngx-humidity-dragger
+            [(value)]="humidity"
+            (power)="humidityOff = !$event"
+            [min]="humidityData.min"
+            [max]="humidityData.max"
+            [disableArcColor]="theme.arcEmpty"
+            [fillColors]="theme.arcFill"
+            [thumbBg]="theme.thumbBg"
+            [thumbBorderColor]="theme.thumbBorder"
+          >
+            <div
+              class="slider-value-container"
+              [ngClass]="{ off: humidityOff }"
+            >
+              <div class="value humidity h1">
+                {{ humidityOff ? "--" : (humidity | ngxRound) }}
+              </div>
+            </div>
+          </ngx-humidity-dragger>
+        </div>
+      </nb-tab>
+    </nb-tabset>
+  </nb-card>
+</ng-container>

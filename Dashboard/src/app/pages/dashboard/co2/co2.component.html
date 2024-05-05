@@ -1,0 +1,27 @@
+<ng-container *ngIf="co2">
+  <nb-card size="medium">
+    <nb-tabset fullWidth>
+      <nb-tab tabTitle="CO2">
+        <div class="slider-container">
+          <ngx-co2-dragger
+            [(value)]="co2"
+            (power)="humidityOff = !$event"
+            [min]="co2Data.min"
+            [max]="co2Data.max"
+            [disableArcColor]="theme.arcEmpty"
+            [fillColors]="theme.arcFill"
+            [thumbBg]="theme.thumbBg"
+            [thumbBorderColor]="theme.thumbBorder"
+          >
+            <div class="slider-value-container" [ngClass]="{ off: co2Off }">
+              <div class="value h1">
+                {{ co2Off ? "--" : (co2 | ngxRound) }}
+              </div>
+              <div class="desc">PPM</div>
+            </div>
+          </ngx-co2-dragger>
+        </div>
+      </nb-tab>
+    </nb-tabset>
+  </nb-card>
+</ng-container>
